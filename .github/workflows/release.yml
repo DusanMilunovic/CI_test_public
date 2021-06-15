@@ -1,12 +1,9 @@
-# This is a basic workflow to help you get started with Actions
+name: "tagged-release"
 
-name: CI
-
-# Controls when the action will run. 
 on:
   push:
     tags:
-      - "v*"
+      - "v[0-9]+.[0-9]+.[0-9]+"
 
 jobs:
   tagged-release:
@@ -19,11 +16,11 @@ jobs:
         run: |
           echo "done!"
       - name: Get Latest Release
-        uses: pozetroninc/github-action-get-latest-release@v0.5.0
         id: release_version
+        uses: pozetroninc/github-action-get-latest-release@v0.5.0
         with:
-          repository:  DusanMilunovic/CI_test_public 
+          repository: ${{ github.repository }} 
           excludes: prerelease, draft
       - name: "Echo output"
         run: |
-          echo "${{ steps.release_version.outputs.release }}"
+          echo "release ${{ steps.release_version.outputs.release }}"

@@ -1,0 +1,26 @@
+name: "tagged-prerelease"
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+-[0-9a-zA-Z]+"
+
+jobs:
+  tagged-release:
+    name: "Tagged Preelease"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # ...
+      - name: "Build & test"
+        run: |
+          echo "done!"
+      - name: Get Latest Prerelease
+        id: release_version
+        uses: pozetroninc/github-action-get-latest-release@v0.5.0
+        with:
+          repository: ${{ github.repository }} 
+          excludes: release, draft
+      - name: "Echo output"
+        run: |
+          echo "prerelease ${{ steps.release_version.outputs.release }}"
