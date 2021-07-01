@@ -13,11 +13,11 @@ esac
 
 cd terraform || exit
 
-rm -rf ./agent_backend/Dockerfile
+rm -rf ./agent-backend/Dockerfile
 
-# echo "FROM $BACKEND_IMAGE" >> ./agent_backend/Dockerfile
-echo "FROM dusanpanda/agent_backend:latest" >> ./agent_backend/Dockerfile
-cat ./agent_backend/Dockerfile
+# echo "FROM $BACKEND_IMAGE" >> ./agent-backend/Dockerfile
+echo "FROM dusanpanda/agent_backend:latest" >> ./agent-backend/Dockerfile
+cat ./agent-backend/Dockerfile
 
 DATABASE_URL=$(heroku config:get DATABASE_URL --app "$TERRAFORM_PG_BACKEND") && export DATABASE_URL
 terraform init -backend-config="conn_str=$DATABASE_URL"
