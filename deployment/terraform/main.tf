@@ -30,7 +30,7 @@ resource "heroku_app" "agent_backend" {
   }
 }
 
-resource "heroku_addon" "postgres" {
+resource "heroku_addon" "postgres-agent_backend" {
   app = heroku_app.agent_backend.id
   plan = "heroku-postgresql:hobby-dev"
 }
@@ -40,3 +40,4 @@ resource "heroku_build" "agent_backend-build" {
   source {
     path = "backend"
   }
+}
