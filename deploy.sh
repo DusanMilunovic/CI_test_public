@@ -26,7 +26,7 @@ docker create \
   --env STAGE="${STAGE}" \
   --env TOKEN_SECRET="${TOKEN_SECRET}" \
   --env BACKEND_IMAGE="${BACKEND_IMAGE}" \
-  --env COMMAND="run_server"
+  --env COMMAND="run_server" \
   --name "$CONTAINER_NAME" \
   danijelradakovic/heroku-terraform \
   deploy.sh
