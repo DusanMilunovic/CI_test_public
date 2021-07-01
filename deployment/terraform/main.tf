@@ -38,6 +38,6 @@ resource "heroku_addon" "postgres-agent_backend" {
 resource "heroku_build" "agent_backend-build" {
   app = heroku_app.agent_backend.id
   source {
-    path = "backend"
+    path = "agent_backend"
   }
 }
