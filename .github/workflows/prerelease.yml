@@ -24,3 +24,7 @@ jobs:
       - name: "Echo output"
         run: |
           echo "prerelease ${{ steps.release_version.outputs.release }}"
+
+      - name: Deploy to staging env on Heroku
+        run: ./deploy.sh ${{ steps.release_version.outputs.release }} dusanpanda@gmail.com ${{secrets.HEROKU_API_KEY}} staging-agent-backend ${{secrets.TOKEN_SECRET}}
+
