@@ -27,5 +27,5 @@ jobs:
           echo "prerelease ${{ steps.release_version.outputs.release }}"
 
       - name: Deploy to staging env on Heroku
-        run: ./deploy.sh ${{ steps.release_version.outputs.release }} dusanpanda@gmail.com ${{secrets.HEROKU_API_KEY}} staging-agent-backend ${{secrets.TOKEN_SECRET}}
+        run: ./deploy.sh ${{ steps.release_version.outputs.release }} dusanpanda@gmail.com ${{secrets.HEROKU_API_KEY}} stage-agent-backend ${{secrets.SQL_PASSWORD}} ${{secrets.FLASK_SECRET_KEY}}
 
