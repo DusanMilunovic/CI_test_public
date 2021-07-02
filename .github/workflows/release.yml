@@ -24,3 +24,5 @@ jobs:
       - name: "Echo output"
         run: |
           echo "release ${{ steps.release_version.outputs.release }}"
+      - name: Deploy to production env on Heroku
+        run: ./deploy.sh ${{ steps.release_version.outputs.release }} dusanmilunovic17@gmail.com ${{secrets.HEROKU_API_KEY_PROD}} prod-agent-backend-postgres ${{secrets.SQL_PASSWORD_PROD}} ${{secrets.FLASK_SECRET_KEY}} aoptzkmb aoptzkmb prod

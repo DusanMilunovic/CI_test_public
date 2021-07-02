@@ -7,23 +7,22 @@ HEROKU_API_KEY=${3}
 TERRAFORM_PG_BACKEND=${4}
 SQL_PASSWORD=${5}
 FLASK_SECRET_KEY=${6}
+SQL_DB_NAME=${7}
+SQL_USERNAME=${8}
 
-STAGE=${7-stage}
-DOCKERHUB_USERNAME=${8:-dusanpanda}
-CONTAINER_NAME=${9:-terraform-deploy}
+STAGE=${9-stage}
+DOCKERHUB_USERNAME=${10:-dusanpanda}
+CONTAINER_NAME=${11:-terraform-deploy}
 
 FLASK_APP=project/__init__.py
 FLASK_ENV=development
 SQL_HOST=ella.db.elephantsql.com
 SQL_PORT=5432
-SQL_DB_NAME=aoptzkmb
-SQL_USERNAME=aoptzkmb
 DATABASE=postgres
 COMMAND=run_server
 POSTGRES_PASSWORD=${SQL_PASSWORD}
 POSTGRES_USER=${SQL_USERNAME}
 POSTGRES_DB=${SQL_DB_NAME}
-echo "postgresql://${SQL_USERNAME}:${SQL_PASSWORD}@${SQL_HOST}:${SQL_PORT}/${SQL_DB_NAME}"
 
 BACKEND_IMAGE=${DOCKERHUB_USERNAME}/agent_backend:${VERSION}
 
