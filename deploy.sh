@@ -14,7 +14,7 @@ CONTAINER_NAME=${9:-terraform-deploy}
 
 FLASK_APP=project/__init__.py
 FLASK_ENV=development
-SQL_HOST=ella.db.elephantsql.com/aoptzkmb
+SQL_HOST=ella.db.elephantsql.com
 SQL_PORT=5432
 SQL_DB_NAME=aoptzkmb
 SQL_USERNAME=aoptzkmb
