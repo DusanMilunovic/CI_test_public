@@ -36,17 +36,17 @@ docker create \
   --env BACKEND_IMAGE="${BACKEND_IMAGE}" \
   --env FLASK_APP="${FLASK_APP}" \
   --env FLASK_ENV="${FLASK_ENV}" \
-  --env FLASK_SECRET_KEY="${FLASK_SECRET_KEY}"
-  --env SQL_HOST="${SQL_HOST}"
-  --env SQL_PASSWORD="${SQL_PASSWORD}"
-  --env SQL_PORT="${SQL_PORT}"
-  --env SQL_DB_NAME="${SQL_DB_NAME}"
-  --env SQL_USERNAME="${SQL_USERNAME}"
-  --env DATABASE="${DATABASE}"
-  --env COMMAND="${COMMAND}"
-  --env POSTGRES_PASSWORD="${POSTGRES_PASSWORD}"
-  --env POSTGRES_USER="${POSTGRES_USER}"
-  --env POSTGRES_DB="${POSTGRES_DB}"
+  --env FLASK_SECRET_KEY="${FLASK_SECRET_KEY}" \
+  --env SQL_HOST="${SQL_HOST}" \
+  --env SQL_PASSWORD="${SQL_PASSWORD}" \
+  --env SQL_PORT="${SQL_PORT}" \
+  --env SQL_DB_NAME="${SQL_DB_NAME}" \
+  --env SQL_USERNAME="${SQL_USERNAME}" \
+  --env DATABASE="${DATABASE}" \
+  --env COMMAND="${COMMAND}" \
+  --env POSTGRES_PASSWORD="${POSTGRES_PASSWORD}" \
+  --env POSTGRES_USER="${POSTGRES_USER}" \
+  --env POSTGRES_DB="${POSTGRES_DB}" \
   --name "${CONTAINER_NAME}" \
   danijelradakovic/heroku-terraform \
   deploy.sh
