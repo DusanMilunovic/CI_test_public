@@ -16,13 +16,14 @@ FLASK_APP=project/__init__.py
 FLASK_ENV=development
 SQL_HOST=ella.db.elephantsql.com/aoptzkmb
 SQL_PORT=5432
-SQL_DB_NAME=devoops
+SQL_DB_NAME=aoptzkmb
 SQL_USERNAME=aoptzkmb
 DATABASE=postgres
 COMMAND=run_server
 POSTGRES_PASSWORD=${SQL_PASSWORD}
 POSTGRES_USER=${SQL_USERNAME}
 POSTGRES_DB=${SQL_DB_NAME}
+echo "postgresql://${SQL_USERNAME}:${SQL_PASSWORD}@${SQL_HOST}:${SQL_PORT}/${SQL_DB_NAME}"
 
 BACKEND_IMAGE=${DOCKERHUB_USERNAME}/agent_backend:${VERSION}
 
